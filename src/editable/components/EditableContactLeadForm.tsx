@@ -34,7 +34,7 @@ export function EditableContactLeadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-8 border-t-4 border-black bg-white pt-7">
+    <form onSubmit={handleSubmit} className="mt-8">
       <div className="grid gap-4 md:grid-cols-2">
         <Field name="name" label="Full name" placeholder="Your name" required />
         <Field name="email" type="email" label="Email address" placeholder="you@example.com" required />
@@ -43,18 +43,18 @@ export function EditableContactLeadForm() {
         <Field name="phone" label="Phone number" placeholder="Optional" />
         <Field name="subject" label="Subject" placeholder="How can we help?" />
       </div>
-      <label className="mt-4 grid gap-2 text-sm font-black opacity-75">
+      <label className="mt-4 grid gap-2 text-sm font-bold text-[var(--slot4-muted-text)]">
         Message
-        <textarea name="message" required rows={6} placeholder="Tell us what you need help with..." className="border border-black bg-white px-4 py-3 text-base font-medium outline-none transition focus:border-[#c92f2f]" />
+        <textarea name="message" required rows={6} placeholder="Tell us what you need help with..." className="rounded-2xl border border-[var(--editable-border)] bg-[var(--slot4-page-bg)] px-4 py-3 text-base font-medium text-[var(--slot4-page-text)] outline-none transition placeholder:text-[var(--slot4-soft-muted-text)] focus:border-[var(--slot4-accent)] focus:ring-4 focus:ring-[var(--slot4-ring)]" />
       </label>
       <input name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       {message ? (
-        <div className={`mt-5 flex items-start gap-3 border px-4 py-3 text-sm font-bold ${status === 'success' ? 'border-emerald-800 bg-emerald-50 text-emerald-800' : 'border-red-700 bg-red-50 text-red-700'}`}>
+        <div className={`mt-5 flex items-start gap-3 rounded-2xl border px-4 py-3 text-sm font-bold ${status === 'success' ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : 'border-red-200 bg-red-50 text-red-700'}`}>
           {status === 'success' ? <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" /> : null}
           <span>{message}</span>
         </div>
       ) : null}
-      <button type="submit" disabled={status === 'submitting'} className="mt-6 inline-flex h-[3.25rem] w-full items-center justify-center gap-2 border border-black bg-black px-6 text-xs font-black uppercase tracking-[0.24em] text-white transition hover:bg-[#c92f2f] disabled:cursor-not-allowed disabled:opacity-70">
+      <button type="submit" disabled={status === 'submitting'} className="mt-6 inline-flex h-[3.25rem] w-full items-center justify-center gap-2 rounded-full bg-[var(--slot4-accent)] px-6 text-sm font-bold tracking-[0.02em] text-white shadow-[0_14px_34px_rgba(79,70,229,0.30)] transition hover:-translate-y-0.5 hover:bg-[var(--slot4-accent-strong)] disabled:cursor-not-allowed disabled:opacity-70">
         {status === 'submitting' ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
         Send message
       </button>
@@ -64,9 +64,9 @@ export function EditableContactLeadForm() {
 
 function Field({ name, label, type = 'text', placeholder, required = false }: { name: string; label: string; type?: string; placeholder?: string; required?: boolean }) {
   return (
-    <label className="grid gap-2 text-sm font-black opacity-75">
+    <label className="grid gap-2 text-sm font-bold text-[var(--slot4-muted-text)]">
       {label}
-      <input name={name} type={type} required={required} placeholder={placeholder} className="h-[3.25rem] border border-black bg-white px-4 text-base font-medium outline-none transition focus:border-[#c92f2f]" />
+      <input name={name} type={type} required={required} placeholder={placeholder} className="h-[3.25rem] rounded-2xl border border-[var(--editable-border)] bg-[var(--slot4-page-bg)] px-4 text-base font-medium text-[var(--slot4-page-text)] outline-none transition placeholder:text-[var(--slot4-soft-muted-text)] focus:border-[var(--slot4-accent)] focus:ring-4 focus:ring-[var(--slot4-ring)]" />
     </label>
   )
 }
