@@ -3,52 +3,52 @@ import { slot4BrandConfig } from '@/editable/theme/brand.config'
 export const globalContent = {
   site: {
     name: slot4BrandConfig.siteName,
-    tagline: slot4BrandConfig.tagline || 'Independent reading platform',
+    tagline: slot4BrandConfig.tagline || 'Media distribution & newswire',
     domain: slot4BrandConfig.domain,
     baseUrl: slot4BrandConfig.baseUrl,
   },
   nav: {
-    tagline: 'News, media, and public updates',
+    tagline: 'Media distribution & newswire',
     primaryLinks: [
-      { label: 'Latest Updates', href: '/updates' },
-      { label: 'News Media', href: '/updates?category=news-media' },
+      { label: 'Newsroom', href: '/updates' },
       { label: 'Press Releases', href: '/updates?category=press-release' },
+      { label: 'Media Coverage', href: '/updates?category=news-media' },
       { label: 'Contact', href: '/contact' },
     ],
     actions: {
-      primary: { label: 'Browse updates', href: '/updates' },
-      secondary: { label: 'Submit', href: '/contact' },
+      primary: { label: 'Open newsroom', href: '/updates' },
+      secondary: { label: 'Send a tip', href: '/contact' },
     },
   },
   footer: {
-    tagline: 'Newsroom updates and distributed media',
-    description: 'A flexible media distribution surface for announcements, press coverage, public updates, and dynamic news categories.',
+    tagline: 'Newswire & distributed media',
+    description: `${slot4BrandConfig.siteName} distributes press releases and media coverage to verified channels — real-time reach, category-led discovery, and a clean newsroom built for trust.`,
     columns: [
       {
-        title: 'Explore',
+        title: 'Newsroom',
         links: [
-          { label: 'Latest Updates', href: '/updates' },
-          { label: 'News Media', href: '/updates?category=news-media' },
-          { label: 'Business News', href: '/updates?category=business' },
+          { label: 'Latest Releases', href: '/updates' },
           { label: 'Press Releases', href: '/updates?category=press-release' },
+          { label: 'Media Coverage', href: '/updates?category=news-media' },
+          { label: 'Business News', href: '/updates?category=business' },
         ],
       },
       {
-        title: 'Site',
+        title: 'Company',
         links: [
           { label: 'About', href: '/about' },
           { label: 'Contact', href: '/contact' },
         ],
       },
     ],
-    bottomNote: 'Built for fast, flexible, and category-led media distribution.',
+    bottomNote: 'Built for fast, verified, category-led media distribution.',
   },
   commonLabels: {
-    readMore: 'Read more',
+    readMore: 'Read release',
     viewAll: 'View all',
     explore: 'Explore',
     latest: 'Latest',
     related: 'Related',
-    published: 'Published',
+    published: 'Distributed',
   },
 } as const
